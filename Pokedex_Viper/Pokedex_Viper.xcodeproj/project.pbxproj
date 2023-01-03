@@ -9,21 +9,31 @@
 /* Begin PBXBuildFile section */
 		34D7DBD02964A56900C0533C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D7DBCF2964A56900C0533C /* AppDelegate.swift */; };
 		34D7DBD22964A56900C0533C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D7DBD12964A56900C0533C /* SceneDelegate.swift */; };
-		34D7DBD42964A56900C0533C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D7DBD32964A56900C0533C /* ViewController.swift */; };
-		34D7DBD72964A56900C0533C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34D7DBD52964A56900C0533C /* Main.storyboard */; };
 		34D7DBD92964A56D00C0533C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34D7DBD82964A56D00C0533C /* Assets.xcassets */; };
 		34D7DBDC2964A56D00C0533C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34D7DBDA2964A56D00C0533C /* LaunchScreen.storyboard */; };
+		34D7DBEA2964A6D100C0533C /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D7DBE32964A6D100C0533C /* HomePresenter.swift */; };
+		34D7DBEB2964A6D100C0533C /* HomeLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D7DBE42964A6D100C0533C /* HomeLocalDataManager.swift */; };
+		34D7DBEC2964A6D100C0533C /* HomeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D7DBE52964A6D100C0533C /* HomeProtocols.swift */; };
+		34D7DBED2964A6D100C0533C /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D7DBE62964A6D100C0533C /* HomeInteractor.swift */; };
+		34D7DBEE2964A6D100C0533C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D7DBE72964A6D100C0533C /* HomeView.swift */; };
+		34D7DBEF2964A6D100C0533C /* HomeRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D7DBE82964A6D100C0533C /* HomeRemoteDataManager.swift */; };
+		34D7DBF02964A6D100C0533C /* HomeWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D7DBE92964A6D100C0533C /* HomeWireFrame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		34D7DBCC2964A56900C0533C /* Pokedex_Viper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokedex_Viper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34D7DBCF2964A56900C0533C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34D7DBD12964A56900C0533C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		34D7DBD32964A56900C0533C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		34D7DBD62964A56900C0533C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		34D7DBD82964A56D00C0533C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34D7DBDB2964A56D00C0533C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34D7DBDD2964A56D00C0533C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		34D7DBE32964A6D100C0533C /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		34D7DBE42964A6D100C0533C /* HomeLocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLocalDataManager.swift; sourceTree = "<group>"; };
+		34D7DBE52964A6D100C0533C /* HomeProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProtocols.swift; sourceTree = "<group>"; };
+		34D7DBE62964A6D100C0533C /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		34D7DBE72964A6D100C0533C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		34D7DBE82964A6D100C0533C /* HomeRemoteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRemoteDataManager.swift; sourceTree = "<group>"; };
+		34D7DBE92964A6D100C0533C /* HomeWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWireFrame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +68,26 @@
 			children = (
 				34D7DBCF2964A56900C0533C /* AppDelegate.swift */,
 				34D7DBD12964A56900C0533C /* SceneDelegate.swift */,
-				34D7DBD32964A56900C0533C /* ViewController.swift */,
-				34D7DBD52964A56900C0533C /* Main.storyboard */,
+				34D7DBF12964A6D900C0533C /* HomeView */,
 				34D7DBD82964A56D00C0533C /* Assets.xcassets */,
 				34D7DBDA2964A56D00C0533C /* LaunchScreen.storyboard */,
 				34D7DBDD2964A56D00C0533C /* Info.plist */,
 			);
 			path = Pokedex_Viper;
+			sourceTree = "<group>";
+		};
+		34D7DBF12964A6D900C0533C /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				34D7DBE72964A6D100C0533C /* HomeView.swift */,
+				34D7DBE62964A6D100C0533C /* HomeInteractor.swift */,
+				34D7DBE32964A6D100C0533C /* HomePresenter.swift */,
+				34D7DBE52964A6D100C0533C /* HomeProtocols.swift */,
+				34D7DBE42964A6D100C0533C /* HomeLocalDataManager.swift */,
+				34D7DBE82964A6D100C0533C /* HomeRemoteDataManager.swift */,
+				34D7DBE92964A6D100C0533C /* HomeWireFrame.swift */,
+			);
+			path = HomeView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +150,6 @@
 			files = (
 				34D7DBDC2964A56D00C0533C /* LaunchScreen.storyboard in Resources */,
 				34D7DBD92964A56D00C0533C /* Assets.xcassets in Resources */,
-				34D7DBD72964A56900C0533C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +160,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34D7DBD42964A56900C0533C /* ViewController.swift in Sources */,
 				34D7DBD02964A56900C0533C /* AppDelegate.swift in Sources */,
+				34D7DBEB2964A6D100C0533C /* HomeLocalDataManager.swift in Sources */,
 				34D7DBD22964A56900C0533C /* SceneDelegate.swift in Sources */,
+				34D7DBEC2964A6D100C0533C /* HomeProtocols.swift in Sources */,
+				34D7DBEE2964A6D100C0533C /* HomeView.swift in Sources */,
+				34D7DBEF2964A6D100C0533C /* HomeRemoteDataManager.swift in Sources */,
+				34D7DBEA2964A6D100C0533C /* HomePresenter.swift in Sources */,
+				34D7DBED2964A6D100C0533C /* HomeInteractor.swift in Sources */,
+				34D7DBF02964A6D100C0533C /* HomeWireFrame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		34D7DBD52964A56900C0533C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				34D7DBD62964A56900C0533C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		34D7DBDA2964A56D00C0533C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -291,7 +311,6 @@
 				INFOPLIST_FILE = Pokedex_Viper/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -319,7 +338,6 @@
 				INFOPLIST_FILE = Pokedex_Viper/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
