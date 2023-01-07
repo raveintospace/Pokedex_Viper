@@ -57,7 +57,7 @@ protocol HomeRemoteDataManagerInputProtocol: AnyObject {
 
 protocol HomeRemoteDataManagerOutputProtocol {
     // REMOTEDATAMANAGER -> INTERACTOR
-    func remoteDataManagerCallBackData(with category: [Pokemon])
+    func remoteDataManagerCallBackData(with data: [Pokemon])
 }
 
 protocol HomeLocalDataManagerInputProtocol {

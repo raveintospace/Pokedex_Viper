@@ -15,22 +15,13 @@ final class HomeInteractor: HomeInteractorInputProtocol {
     var localDatamanager: HomeLocalDataManagerInputProtocol?
     var remoteDatamanager: HomeRemoteDataManagerInputProtocol?
     
-    var arrayPokemons = [Pokemon]()
-    
     func interactorGetPokemons() {
         remoteDatamanager?.fetchPokemons()
     }
-
 }
 
 extension HomeInteractor: HomeRemoteDataManagerOutputProtocol {
-    func remoteDataManagerCallBackData(with category: [Pokemon]) {
-        for pokemon in category {
-            let pokemonForView = Pokemon(id: pokemon.id, attack: pokemon.attack, name: pokemon.name, imageUrl: pokemon.imageUrl)
-            self.arrayPokemons.append(pokemonForView)
-        }
-        presenter?.interactorPushDataToPresenter(receivedData: self.arrayPokemons)
+    func remoteDataManagerCallBackData(with data: [Pokemon]) {
+        presenter?.interactorPushDataToPresenter(receivedData: data)
     }
-    
-    
 }

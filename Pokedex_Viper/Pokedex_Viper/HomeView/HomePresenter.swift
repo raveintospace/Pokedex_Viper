@@ -28,7 +28,5 @@ extension HomePresenter: HomePresenterProtocol {
 extension HomePresenter: HomeInteractorOutputProtocol {
     func interactorPushDataToPresenter(receivedData: [Pokemon]) {
         view?.presenterPushDataToView(receivedData: receivedData)
-        
     }
-    
 }
