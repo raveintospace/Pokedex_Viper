@@ -30,4 +30,11 @@ final class HomeWireFrame: HomeWireFrameProtocol {
         return navController
     }
     
+    func presentPokemonDetailView(from view: HomeViewProtocol, withData: Pokemon) {
+        let pokemonDetailView = DetailWireFrame.createDetailModule(with: withData)
+        
+        let viewController = view as! HomeView
+        viewController.navigationController?.pushViewController(pokemonDetailView, animated: true)
+    }
+    
 }

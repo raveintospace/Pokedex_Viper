@@ -23,6 +23,10 @@ extension HomePresenter: HomePresenterProtocol {
         interactor?.interactorGetPokemons()
         view?.setup()
     }
+    
+    func showPokemonDetailView(with data: Pokemon) {
+        wireFrame?.presentPokemonDetailView(from: view!, withData: data)
+    }
 }
 
 extension HomePresenter: HomeInteractorOutputProtocol {

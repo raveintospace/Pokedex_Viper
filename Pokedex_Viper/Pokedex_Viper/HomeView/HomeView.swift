@@ -36,7 +36,7 @@ extension HomeView: HomeViewProtocol {
     func setup() {
         safeArea = view.layoutMarginsGuide
         pokemonTableView.dataSource = self
-        // pokemonTableView.delegate = self
+        pokemonTableView.delegate = self
         pokemonTableView.register(PokemonCell.self, forCellReuseIdentifier: "cellId")
         self.navigationItem.title = "Pokedex Viper"
         setupNavigationBar()
@@ -111,5 +111,11 @@ extension HomeView: UITableViewDataSource {
         
         return cell
     }
-    
+}
+
+extension HomeView: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let pokemon = arrayViewPokemons[indexPath.row]
+        presenter?.showPokemonDetailView(with: pokemon)
+    }
 }

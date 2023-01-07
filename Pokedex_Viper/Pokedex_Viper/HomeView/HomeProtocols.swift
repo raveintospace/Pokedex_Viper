@@ -19,6 +19,8 @@ protocol HomeViewProtocol: AnyObject {
 protocol HomeWireFrameProtocol {
     // PRESENTER -> WIREFRAME
     static func createHomeModule() -> UINavigationController
+    
+    func presentPokemonDetailView(from view: HomeViewProtocol, withData: Pokemon)
 }
 
 protocol HomePresenterProtocol: AnyObject {
@@ -28,6 +30,7 @@ protocol HomePresenterProtocol: AnyObject {
     var wireFrame: HomeWireFrameProtocol? { get set }
     
     func viewDidLoad()
+    func showPokemonDetailView(with data: Pokemon)
 }
 
 protocol HomeInteractorOutputProtocol {
