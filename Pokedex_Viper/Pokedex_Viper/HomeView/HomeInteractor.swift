@@ -12,7 +12,6 @@ final class HomeInteractor: HomeInteractorInputProtocol {
 
     // MARK: Properties
     var presenter: HomeInteractorOutputProtocol?
-    var localDatamanager: HomeLocalDataManagerInputProtocol?
     var remoteDatamanager: HomeRemoteDataManagerInputProtocol?
     
     func interactorGetPokemons() {

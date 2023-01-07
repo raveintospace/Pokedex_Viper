@@ -39,14 +39,9 @@ protocol HomeInteractorOutputProtocol {
 protocol HomeInteractorInputProtocol: AnyObject {
     // PRESENTER -> INTERACTOR
     var presenter: HomeInteractorOutputProtocol? { get set }
-    var localDatamanager: HomeLocalDataManagerInputProtocol? { get set }
     var remoteDatamanager: HomeRemoteDataManagerInputProtocol? { get set }
     
     func interactorGetPokemons()
-}
-
-protocol HomeDataManagerInputProtocol {
-    // INTERACTOR -> DATAMANAGER
 }
 
 protocol HomeRemoteDataManagerInputProtocol: AnyObject {
@@ -58,8 +53,4 @@ protocol HomeRemoteDataManagerInputProtocol: AnyObject {
 protocol HomeRemoteDataManagerOutputProtocol {
     // REMOTEDATAMANAGER -> INTERACTOR
     func remoteDataManagerCallBackData(with data: [Pokemon])
-}
-
-protocol HomeLocalDataManagerInputProtocol {
-    // INTERACTOR -> LOCALDATAMANAGER
 }
