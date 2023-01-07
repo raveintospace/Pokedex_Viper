@@ -13,6 +13,7 @@ class PokemonCell: UITableViewCell {
     let idLabel = UILabel()
     let nameLabel = UILabel()
     let attackLabel = UILabel()
+    let defenseLabel = UILabel()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -31,6 +32,7 @@ class PokemonCell: UITableViewCell {
         setupImageView()
         setupNameLabel()
         setupAttackLabel()
+        setupDefenseLabel()
     }
     
     func setupImageView() {
@@ -58,7 +60,7 @@ class PokemonCell: UITableViewCell {
         
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.leadingAnchor.constraint(equalTo: imageIV.trailingAnchor, constant: 10).isActive = true
-        nameLabel.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -5).isActive = true
+        nameLabel.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -15).isActive = true
         
         nameLabel.font = UIFont(name: "Verdana-Bold", size: 16)
     }
@@ -71,5 +73,15 @@ class PokemonCell: UITableViewCell {
         attackLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor).isActive = true
         
         attackLabel.font = UIFont(name: "Verdana", size: 14)
+    }
+    
+    func setupDefenseLabel() {
+        addSubview(defenseLabel)
+        
+        defenseLabel.translatesAutoresizingMaskIntoConstraints = false
+        defenseLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor).isActive = true
+        defenseLabel.topAnchor.constraint(equalTo: attackLabel.bottomAnchor).isActive = true
+        
+        defenseLabel.font = UIFont(name: "Verdana", size: 14)
     }
 }

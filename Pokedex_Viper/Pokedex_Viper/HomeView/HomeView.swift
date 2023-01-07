@@ -88,6 +88,8 @@ extension HomeView: HomeViewProtocol {
     }
 }
 
+// MARK: - PokemonTableView
+
 extension HomeView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrayViewPokemons.count
@@ -99,7 +101,8 @@ extension HomeView: UITableViewDataSource {
         
         guard let pokemonCell = cell as? PokemonCell else { return cell }
         pokemonCell.nameLabel.text = pokemon.name.capitalized
-        pokemonCell.attackLabel.text = String(pokemon.attack)
+        pokemonCell.attackLabel.text = "Attack: \(pokemon.attack)"
+        pokemonCell.defenseLabel.text = "Defense: \(pokemon.defense)"
         pokemonCell.idLabel.text = String(pokemon.id)
         
         if let url = URL(string: pokemon.imageUrl) {
