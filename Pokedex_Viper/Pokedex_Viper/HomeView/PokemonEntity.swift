@@ -7,10 +7,6 @@
 
 import Foundation
 
-//struct PokemonEntity: Decodable {
-//    let pokemon: [Pokemon]
-//}
-
 struct Pokemon: Decodable, Identifiable {
     let id: Int
     let attack: Int
