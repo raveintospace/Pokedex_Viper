@@ -8,7 +8,7 @@
 
 import Foundation
 
-class HomePresenter  {
+final class HomePresenter  {
     
     // MARK: Properties
     weak var view: HomeViewProtocol?
@@ -20,10 +20,15 @@ class HomePresenter  {
 extension HomePresenter: HomePresenterProtocol {
    
     func viewDidLoad() {
+        interactor?.interactorGetPokemons()
         view?.setup()
     }
 }
 
 extension HomePresenter: HomeInteractorOutputProtocol {
+    func interactorPushDataToPresenter(receivedData: [Pokemon]) {
+        view?.presenterPushDataToView(receivedData: receivedData)
+        
+    }
     
 }

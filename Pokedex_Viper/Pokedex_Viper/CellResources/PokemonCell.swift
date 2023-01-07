@@ -37,10 +37,10 @@ class PokemonCell: UITableViewCell {
         addSubview(imageIV)
         
         imageIV.translatesAutoresizingMaskIntoConstraints = false
-        imageIV.leadingAnchor.constraint(equalTo: idLabel.trailingAnchor, constant: 5).isActive = true
+        imageIV.leadingAnchor.constraint(equalTo: idLabel.trailingAnchor, constant: 10).isActive = true
         imageIV.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        imageIV.widthAnchor.constraint(equalToConstant: 40).isActive = true
-        imageIV.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        imageIV.widthAnchor.constraint(equalToConstant: 70).isActive = true
+        imageIV.heightAnchor.constraint(equalToConstant: 70).isActive = true
         
         imageIV.contentMode = .scaleAspectFit
     }
@@ -57,8 +57,8 @@ class PokemonCell: UITableViewCell {
         addSubview(nameLabel)
         
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
-        nameLabel.leadingAnchor.constraint(equalTo: imageIV.trailingAnchor, constant: 5).isActive = true
-        nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 5).isActive = true
+        nameLabel.leadingAnchor.constraint(equalTo: imageIV.trailingAnchor, constant: 10).isActive = true
+        nameLabel.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -5).isActive = true
         
         nameLabel.font = UIFont(name: "Verdana-Bold", size: 16)
     }

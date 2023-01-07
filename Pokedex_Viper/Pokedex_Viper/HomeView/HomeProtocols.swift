@@ -13,6 +13,7 @@ protocol HomeViewProtocol: AnyObject {
     // PRESENTER -> VIEW
     var presenter: HomePresenterProtocol? { get set }
     func setup()
+    func presenterPushDataToView(receivedData: [Pokemon])
 }
 
 protocol HomeWireFrameProtocol {
@@ -30,7 +31,9 @@ protocol HomePresenterProtocol: AnyObject {
 }
 
 protocol HomeInteractorOutputProtocol {
-// INTERACTOR -> PRESENTER
+    // INTERACTOR -> PRESENTER
+    func interactorPushDataToPresenter(receivedData: [Pokemon])
+    
 }
 
 protocol HomeInteractorInputProtocol: AnyObject {
@@ -38,6 +41,8 @@ protocol HomeInteractorInputProtocol: AnyObject {
     var presenter: HomeInteractorOutputProtocol? { get set }
     var localDatamanager: HomeLocalDataManagerInputProtocol? { get set }
     var remoteDatamanager: HomeRemoteDataManagerInputProtocol? { get set }
+    
+    func interactorGetPokemons()
 }
 
 protocol HomeDataManagerInputProtocol {
@@ -47,10 +52,12 @@ protocol HomeDataManagerInputProtocol {
 protocol HomeRemoteDataManagerInputProtocol: AnyObject {
     // INTERACTOR -> REMOTEDATAMANAGER
     var remoteRequestHandler: HomeRemoteDataManagerOutputProtocol? { get set }
+    func fetchPokemons()
 }
 
 protocol HomeRemoteDataManagerOutputProtocol {
     // REMOTEDATAMANAGER -> INTERACTOR
+    func remoteDataManagerCallBackData(with category: [Pokemon])
 }
 
 protocol HomeLocalDataManagerInputProtocol {
