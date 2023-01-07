@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34BEF7DA29697BAF0069FDBF /* PokemonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BEF7D929697BAF0069FDBF /* PokemonCell.swift */; };
+		34BEF7DD29697D230069FDBF /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BEF7DC29697D230069FDBF /* CustomImageView.swift */; };
 		34D7DBD02964A56900C0533C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D7DBCF2964A56900C0533C /* AppDelegate.swift */; };
 		34D7DBD22964A56900C0533C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D7DBD12964A56900C0533C /* SceneDelegate.swift */; };
 		34D7DBD92964A56D00C0533C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34D7DBD82964A56D00C0533C /* Assets.xcassets */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		34BEF7D929697BAF0069FDBF /* PokemonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonCell.swift; sourceTree = "<group>"; };
+		34BEF7DC29697D230069FDBF /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		34D7DBCC2964A56900C0533C /* Pokedex_Viper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokedex_Viper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34D7DBCF2964A56900C0533C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34D7DBD12964A56900C0533C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +51,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		34BEF7DB29697BB70069FDBF /* CellResources */ = {
+			isa = PBXGroup;
+			children = (
+				34BEF7D929697BAF0069FDBF /* PokemonCell.swift */,
+				34BEF7DC29697D230069FDBF /* CustomImageView.swift */,
+			);
+			path = CellResources;
+			sourceTree = "<group>";
+		};
 		34D7DBC32964A56900C0533C = {
 			isa = PBXGroup;
 			children = (
@@ -72,6 +85,7 @@
 				34D7DBD82964A56D00C0533C /* Assets.xcassets */,
 				34D7DBDA2964A56D00C0533C /* LaunchScreen.storyboard */,
 				34D7DBDD2964A56D00C0533C /* Info.plist */,
+				34BEF7DB29697BB70069FDBF /* CellResources */,
 			);
 			path = Pokedex_Viper;
 			sourceTree = "<group>";
@@ -165,7 +179,9 @@
 				34D7DBD22964A56900C0533C /* SceneDelegate.swift in Sources */,
 				34D7DBEC2964A6D100C0533C /* HomeProtocols.swift in Sources */,
 				34D7DBEE2964A6D100C0533C /* HomeView.swift in Sources */,
+				34BEF7DA29697BAF0069FDBF /* PokemonCell.swift in Sources */,
 				34D7DBEF2964A6D100C0533C /* HomeRemoteDataManager.swift in Sources */,
+				34BEF7DD29697D230069FDBF /* CustomImageView.swift in Sources */,
 				34D7DBEA2964A6D100C0533C /* HomePresenter.swift in Sources */,
 				34D7DBED2964A6D100C0533C /* HomeInteractor.swift in Sources */,
 				34D7DBF02964A6D100C0533C /* HomeWireFrame.swift in Sources */,

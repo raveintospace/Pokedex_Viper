@@ -18,11 +18,12 @@ class HomePresenter  {
 }
 
 extension HomePresenter: HomePresenterProtocol {
-    // TODO: implement presenter methods
+   
     func viewDidLoad() {
+        view?.setup()
     }
 }
 
 extension HomePresenter: HomeInteractorOutputProtocol {
-    // TODO: implement interactor output methods
+    
 }
