@@ -20,6 +20,7 @@ final class HomeView: UIViewController {
     let navigationBarAppearance = UINavigationBarAppearance()
     
     var arrayViewPokemons = [Pokemon]()
+    var filteredPokemons = [Pokemon]()
 
     // MARK: - Lifecycle
 
@@ -66,6 +67,8 @@ extension HomeView: HomeViewProtocol {
         pokemonSearchTextField.backgroundColor = .white
         pokemonSearchTextField.textAlignment = .center
         pokemonSearchTextField.borderStyle = .roundedRect
+        
+        pokemonSearchTextField.delegate = self
     }
     
     func setupPokemonTableView() {
@@ -118,4 +121,8 @@ extension HomeView: UITableViewDelegate {
         let pokemon = arrayViewPokemons[indexPath.row]
         presenter?.showPokemonDetailView(with: pokemon)
     }
+}
+
+extension HomeView: UITextFieldDelegate {
+    // pending to implement
 }
