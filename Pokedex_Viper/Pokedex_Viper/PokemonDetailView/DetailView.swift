@@ -53,6 +53,7 @@ extension DetailView: DetailViewProtocol {
         detailNameLabel.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 5).isActive = true
         
         detailNameLabel.font = UIFont(name: "Verdana-Bold", size: 20)
+        detailNameLabel.textColor = .black
     }
     
     func setupDetailImageIV() {
@@ -75,6 +76,7 @@ extension DetailView: DetailViewProtocol {
         detailTypeLabel.centerXAnchor.constraint(equalTo: safeArea.centerXAnchor).isActive = true
         
         detailTypeLabel.font = UIFont(name: "Verdana-Bold", size: 16)
+        detailTypeLabel.textColor = .black
     }
     
     func setupDetailAttackLabel() {
@@ -85,6 +87,7 @@ extension DetailView: DetailViewProtocol {
         detailAttackLabel.centerXAnchor.constraint(equalTo: safeArea.centerXAnchor).isActive = true
 
         detailAttackLabel.font = UIFont(name: "Verdana-Bold", size: 16)
+        detailAttackLabel.textColor = .black
     }
     
     func setupDetailDefenseLabel() {
@@ -95,6 +98,7 @@ extension DetailView: DetailViewProtocol {
         detailDefenseLabel.centerXAnchor.constraint(equalTo: safeArea.centerXAnchor).isActive = true
         
         detailDefenseLabel.font = UIFont(name: "Verdana-Bold", size: 16)
+        detailDefenseLabel.textColor = .black
     }
     
     func setupDetailDescriptionTextView() {
@@ -104,12 +108,14 @@ extension DetailView: DetailViewProtocol {
         detailDescriptionTextView.topAnchor.constraint(equalTo: detailDefenseLabel.bottomAnchor, constant: 24).isActive = true
         detailDescriptionTextView.centerXAnchor.constraint(equalTo: safeArea.centerXAnchor).isActive = true
         detailDescriptionTextView.widthAnchor.constraint(equalTo: safeArea.widthAnchor).isActive = true
-        detailDescriptionTextView.heightAnchor.constraint(equalTo: detailDescriptionTextView.widthAnchor, multiplier: 0.75).isActive = true
+        detailDescriptionTextView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -24).isActive = true
         
         detailDescriptionTextView.contentInsetAdjustmentBehavior = .automatic
         detailDescriptionTextView.textAlignment = .left
         detailDescriptionTextView.font = UIFont(name: "Verdana", size: 16)
         detailDescriptionTextView.layer.cornerRadius = 10
+        detailDescriptionTextView.backgroundColor = .white
+        detailDescriptionTextView.textColor = .black
     }
     
     // MARK: - View data configuration

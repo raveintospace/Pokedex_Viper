@@ -1,7 +1,7 @@
 //
 //  HomeView.swift
 //  Pokedex_Viper
-//
+//  https://www.youtube.com/playlist?list=PLaXVvUVtO7VtetqTVKMPU4kD2Xtwz00YT
 //  Created by Uri on 3/1/23.
 //  
 //
@@ -121,6 +121,8 @@ extension HomeView: UITableViewDelegate {
     }
 }
 
+// MARK: - SearchBar
+
 extension HomeView: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         filteredPokemons = []   // empty the array from previous searches
@@ -137,3 +139,6 @@ extension HomeView: UISearchBarDelegate {
         self.pokemonTableView.reloadData()
     }
 }
+
+// to do
+// dark mode
