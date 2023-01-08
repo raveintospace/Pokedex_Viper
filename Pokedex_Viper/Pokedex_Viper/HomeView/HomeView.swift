@@ -14,7 +14,7 @@ final class HomeView: UIViewController {
     // MARK: - Properties
     var presenter: HomePresenterProtocol?
     
-    var pokemonSearchTextField = UITextField()
+    var pokemonSearchBar = UISearchBar()
     var pokemonTableView = UITableView()
     var safeArea: UILayoutGuide!
     let navigationBarAppearance = UINavigationBarAppearance()
@@ -36,12 +36,13 @@ extension HomeView: HomeViewProtocol {
        
     func setupHomeView() {
         safeArea = view.layoutMarginsGuide
+        pokemonSearchBar.delegate = self
         pokemonTableView.dataSource = self
         pokemonTableView.delegate = self
         pokemonTableView.register(PokemonCell.self, forCellReuseIdentifier: "cellId")
         self.navigationItem.title = "Pokedex Viper"
         setupNavigationBar()
-        setupPokemonSearchTextField()
+        setupPokemonSearchBar()
         setupPokemonTableView()
     }
     
@@ -54,28 +55,24 @@ extension HomeView: HomeViewProtocol {
         navigationItem.scrollEdgeAppearance = navigationBarAppearance
     }
     
-    func setupPokemonSearchTextField() {
-        view.addSubview(pokemonSearchTextField)
+    func setupPokemonSearchBar() {
+        view.addSubview(pokemonSearchBar)
         
-        pokemonSearchTextField.translatesAutoresizingMaskIntoConstraints = false
-        pokemonSearchTextField.topAnchor.constraint(equalTo: safeArea.topAnchor).isActive = true
-        pokemonSearchTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        pokemonSearchTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        pokemonSearchTextField.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        pokemonSearchBar.translatesAutoresizingMaskIntoConstraints = false
+        pokemonSearchBar.topAnchor.constraint(equalTo: safeArea.topAnchor).isActive = true
+        pokemonSearchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        pokemonSearchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        pokemonSearchBar.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
-        pokemonSearchTextField.placeholder = "Search a Pokemon"
-        pokemonSearchTextField.backgroundColor = .white
-        pokemonSearchTextField.textAlignment = .center
-        pokemonSearchTextField.borderStyle = .roundedRect
-        
-        pokemonSearchTextField.delegate = self
+        pokemonSearchBar.placeholder = "Search a Pokemon"
+        pokemonSearchBar.backgroundColor = .white
     }
     
     func setupPokemonTableView() {
         view.addSubview(pokemonTableView)
         
         pokemonTableView.translatesAutoresizingMaskIntoConstraints = false
-        pokemonTableView.topAnchor.constraint(equalTo: pokemonSearchTextField.bottomAnchor, constant: 2).isActive = true
+        pokemonTableView.topAnchor.constraint(equalTo: pokemonSearchBar.bottomAnchor, constant: 2).isActive = true
         pokemonTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         pokemonTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         pokemonTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
@@ -85,6 +82,7 @@ extension HomeView: HomeViewProtocol {
     
     func presenterPushDataToView(receivedData: [Pokemon]) {
         arrayViewPokemons = receivedData
+        filteredPokemons = arrayViewPokemons
         DispatchQueue.main.async {
             self.pokemonTableView.reloadData()
         }
@@ -95,12 +93,12 @@ extension HomeView: HomeViewProtocol {
 
 extension HomeView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrayViewPokemons.count
+        return filteredPokemons.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath)
-        let pokemon = arrayViewPokemons[indexPath.row]
+        let pokemon = filteredPokemons[indexPath.row]
         
         guard let pokemonCell = cell as? PokemonCell else { return cell }
         pokemonCell.nameLabel.text = pokemon.name.capitalized
@@ -118,11 +116,24 @@ extension HomeView: UITableViewDataSource {
 
 extension HomeView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let pokemon = arrayViewPokemons[indexPath.row]
+        let pokemon = filteredPokemons[indexPath.row]
         presenter?.showPokemonDetailView(with: pokemon)
     }
 }
 
-extension HomeView: UITextFieldDelegate {
-    // pending to implement
+extension HomeView: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filteredPokemons = []   // empty the array from previous searches
+        
+        if searchText == "" {
+            filteredPokemons = arrayViewPokemons
+        } else {
+            for pokemon in arrayViewPokemons {
+                if pokemon.name.lowercased().contains(searchText.lowercased()) {
+                    filteredPokemons.append(pokemon)
+                }
+            }
+        }
+        self.pokemonTableView.reloadData()
+    }
 }

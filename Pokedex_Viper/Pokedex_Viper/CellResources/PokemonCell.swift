@@ -35,11 +35,21 @@ class PokemonCell: UITableViewCell {
         setupDefenseLabel()
     }
     
+    func setupIdLabel() {
+        addSubview(idLabel)
+        
+        idLabel.translatesAutoresizingMaskIntoConstraints = false
+        idLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor).isActive = true
+        idLabel.centerYAnchor.constraint(equalTo: safeArea.centerYAnchor).isActive = true
+        
+        idLabel.font = UIFont(name: "Verdana-Bold", size: 16)
+    }
+    
     func setupImageView() {
         addSubview(imageIV)
         
         imageIV.translatesAutoresizingMaskIntoConstraints = false
-        imageIV.leadingAnchor.constraint(equalTo: idLabel.trailingAnchor, constant: 10).isActive = true
+        imageIV.leadingAnchor.constraint(equalTo: idLabel.trailingAnchor, constant: 15).isActive = true
         imageIV.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         imageIV.widthAnchor.constraint(equalToConstant: 70).isActive = true
         imageIV.heightAnchor.constraint(equalToConstant: 70).isActive = true
@@ -47,19 +57,11 @@ class PokemonCell: UITableViewCell {
         imageIV.contentMode = .scaleAspectFit
     }
     
-    func setupIdLabel() {
-        addSubview(idLabel)
-        
-        idLabel.translatesAutoresizingMaskIntoConstraints = false
-        idLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor).isActive = true
-        idLabel.centerYAnchor.constraint(equalTo: safeArea.centerYAnchor).isActive = true
-    }
-    
     func setupNameLabel() {
         addSubview(nameLabel)
         
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
-        nameLabel.leadingAnchor.constraint(equalTo: imageIV.trailingAnchor, constant: 10).isActive = true
+        nameLabel.leadingAnchor.constraint(equalTo: imageIV.trailingAnchor, constant: 15).isActive = true
         nameLabel.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -15).isActive = true
         
         nameLabel.font = UIFont(name: "Verdana-Bold", size: 16)
