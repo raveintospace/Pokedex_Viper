@@ -21,7 +21,7 @@ extension HomePresenter: HomePresenterProtocol {
    
     func viewDidLoad() {
         interactor?.interactorGetPokemons()
-        view?.setup()
+        view?.setupHomeView()
     }
     
     func showPokemonDetailView(with data: Pokemon) {

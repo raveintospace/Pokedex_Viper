@@ -17,6 +17,10 @@ final class DetailPresenter: DetailPresenterProtocol  {
     var dataPokemonReceived: Pokemon?
     
     func viewDidLoad() {
+        if let dataPokemonReceived = dataPokemonReceived {
+            view?.setupDetailView()
+            view?.showDataInDetailVC(data: dataPokemonReceived)
+        }
     }
 }
 

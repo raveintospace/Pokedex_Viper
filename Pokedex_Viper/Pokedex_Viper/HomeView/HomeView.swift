@@ -33,7 +33,7 @@ final class HomeView: UIViewController {
 
 extension HomeView: HomeViewProtocol {
        
-    func setup() {
+    func setupHomeView() {
         safeArea = view.layoutMarginsGuide
         pokemonTableView.dataSource = self
         pokemonTableView.delegate = self
@@ -45,8 +45,8 @@ extension HomeView: HomeViewProtocol {
     }
     
     func setupNavigationBar() {
-        navigationBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.orange]
-        navigationBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.orange]
+        navigationBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        navigationBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
         navigationBarAppearance.backgroundColor = .black
         
         navigationItem.standardAppearance = navigationBarAppearance

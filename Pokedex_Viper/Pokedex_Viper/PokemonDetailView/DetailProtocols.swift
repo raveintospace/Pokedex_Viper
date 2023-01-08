@@ -12,6 +12,8 @@ import UIKit
 protocol DetailViewProtocol: AnyObject {
     // PRESENTER -> VIEW
     var presenter: DetailPresenterProtocol? { get set }
+    func setupDetailView()
+    func showDataInDetailVC(data: Pokemon)
 }
 
 protocol DetailWireFrameProtocol {
