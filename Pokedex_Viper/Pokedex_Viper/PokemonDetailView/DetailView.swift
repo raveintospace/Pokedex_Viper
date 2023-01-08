@@ -27,6 +27,7 @@ final class DetailView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.viewDidLoad()
+        view.backgroundColor = .white
     }
 }
 
@@ -51,7 +52,6 @@ extension DetailView: DetailViewProtocol {
         detailNameLabel.centerXAnchor.constraint(equalTo: safeArea.centerXAnchor).isActive = true
         detailNameLabel.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 5).isActive = true
         
-        detailNameLabel.textColor = .white
         detailNameLabel.font = UIFont(name: "Verdana-Bold", size: 20)
     }
     
@@ -74,7 +74,6 @@ extension DetailView: DetailViewProtocol {
         detailTypeLabel.topAnchor.constraint(equalTo: detailImageIV.bottomAnchor, constant: 36).isActive = true
         detailTypeLabel.centerXAnchor.constraint(equalTo: safeArea.centerXAnchor).isActive = true
         
-        detailTypeLabel.textColor = .white
         detailTypeLabel.font = UIFont(name: "Verdana-Bold", size: 16)
     }
     
@@ -84,8 +83,7 @@ extension DetailView: DetailViewProtocol {
         detailAttackLabel.translatesAutoresizingMaskIntoConstraints = false
         detailAttackLabel.topAnchor.constraint(equalTo: detailTypeLabel.bottomAnchor, constant: 8).isActive = true
         detailAttackLabel.centerXAnchor.constraint(equalTo: safeArea.centerXAnchor).isActive = true
-        
-        detailAttackLabel.textColor = .white
+
         detailAttackLabel.font = UIFont(name: "Verdana-Bold", size: 16)
     }
     
@@ -96,7 +94,6 @@ extension DetailView: DetailViewProtocol {
         detailDefenseLabel.topAnchor.constraint(equalTo: detailAttackLabel.bottomAnchor, constant: 8).isActive = true
         detailDefenseLabel.centerXAnchor.constraint(equalTo: safeArea.centerXAnchor).isActive = true
         
-        detailDefenseLabel.textColor = .white
         detailDefenseLabel.font = UIFont(name: "Verdana-Bold", size: 16)
     }
     
@@ -107,12 +104,10 @@ extension DetailView: DetailViewProtocol {
         detailDescriptionTextView.topAnchor.constraint(equalTo: detailDefenseLabel.bottomAnchor, constant: 24).isActive = true
         detailDescriptionTextView.centerXAnchor.constraint(equalTo: safeArea.centerXAnchor).isActive = true
         detailDescriptionTextView.widthAnchor.constraint(equalTo: safeArea.widthAnchor).isActive = true
-        detailDescriptionTextView.heightAnchor.constraint(equalTo: detailDescriptionTextView.widthAnchor).isActive = true
+        detailDescriptionTextView.heightAnchor.constraint(equalTo: detailDescriptionTextView.widthAnchor, multiplier: 0.75).isActive = true
         
         detailDescriptionTextView.contentInsetAdjustmentBehavior = .automatic
         detailDescriptionTextView.textAlignment = .left
-        detailDescriptionTextView.textColor = .white
-        detailDescriptionTextView.backgroundColor = .black
         detailDescriptionTextView.font = UIFont(name: "Verdana", size: 16)
         detailDescriptionTextView.layer.cornerRadius = 10
     }
@@ -120,7 +115,7 @@ extension DetailView: DetailViewProtocol {
     // MARK: - View data configuration
     
     func showDataInDetailVC(data: Pokemon) {
-        detailNameLabel.text = data.name.capitalized
+        detailNameLabel.attributedText = NSAttributedString(string: "\(data.name.uppercased())", attributes: [.underlineStyle: NSUnderlineStyle.single.rawValue])
         
         if let url = URL(string: data.imageUrl) {
             detailImageIV.loadImage(from: url)
