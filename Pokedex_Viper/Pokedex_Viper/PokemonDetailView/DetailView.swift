@@ -27,7 +27,6 @@ final class DetailView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.viewDidLoad()
-        view.backgroundColor = .white
     }
 }
 
@@ -43,6 +42,7 @@ extension DetailView: DetailViewProtocol {
         setupDetailAttackLabel()
         setupDetailDefenseLabel()
         setupDetailDescriptionTextView()
+        setupDetailViewColorsForLightMode()
     }
     
     func setupDetailNameLabel() {
@@ -53,7 +53,6 @@ extension DetailView: DetailViewProtocol {
         detailNameLabel.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 5).isActive = true
         
         detailNameLabel.font = UIFont(name: "Verdana-Bold", size: 20)
-        detailNameLabel.textColor = .black
     }
     
     func setupDetailImageIV() {
@@ -76,7 +75,6 @@ extension DetailView: DetailViewProtocol {
         detailTypeLabel.centerXAnchor.constraint(equalTo: safeArea.centerXAnchor).isActive = true
         
         detailTypeLabel.font = UIFont(name: "Verdana-Bold", size: 16)
-        detailTypeLabel.textColor = .black
     }
     
     func setupDetailAttackLabel() {
@@ -87,7 +85,6 @@ extension DetailView: DetailViewProtocol {
         detailAttackLabel.centerXAnchor.constraint(equalTo: safeArea.centerXAnchor).isActive = true
 
         detailAttackLabel.font = UIFont(name: "Verdana-Bold", size: 16)
-        detailAttackLabel.textColor = .black
     }
     
     func setupDetailDefenseLabel() {
@@ -98,7 +95,6 @@ extension DetailView: DetailViewProtocol {
         detailDefenseLabel.centerXAnchor.constraint(equalTo: safeArea.centerXAnchor).isActive = true
         
         detailDefenseLabel.font = UIFont(name: "Verdana-Bold", size: 16)
-        detailDefenseLabel.textColor = .black
     }
     
     func setupDetailDescriptionTextView() {
@@ -114,8 +110,29 @@ extension DetailView: DetailViewProtocol {
         detailDescriptionTextView.textAlignment = .left
         detailDescriptionTextView.font = UIFont(name: "Verdana", size: 16)
         detailDescriptionTextView.layer.cornerRadius = 10
-        detailDescriptionTextView.backgroundColor = .white
-        detailDescriptionTextView.textColor = .black
+    }
+    
+    // MARK: - View light mode
+    
+    private func setupDetailViewColorsForLightMode() {
+        
+        if #available(iOS 12.0, *) {
+            let isLightMode = traitCollection.userInterfaceStyle == .light
+            
+            view.backgroundColor = isLightMode ? .white : .black
+            detailNameLabel.textColor = isLightMode ? .black : .white
+            detailTypeLabel.textColor = isLightMode ? .black : .white
+            detailAttackLabel.textColor = isLightMode ? .black : .white
+            detailDefenseLabel.textColor = isLightMode ? .black : .white
+            detailDescriptionTextView.backgroundColor = isLightMode ? .white : .black
+            detailDescriptionTextView.textColor = isLightMode ? .black : .white
+        }
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        
+        setupDetailViewColorsForLightMode()
     }
     
     // MARK: - View data configuration
@@ -132,6 +149,4 @@ extension DetailView: DetailViewProtocol {
         detailDefenseLabel.text = "Defense: \(data.defense)"
         detailDescriptionTextView.text = data.description
     }
-    
-    
 }

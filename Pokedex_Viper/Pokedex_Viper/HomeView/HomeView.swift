@@ -44,6 +44,7 @@ extension HomeView: HomeViewProtocol {
         setupNavigationBar()
         setupPokemonSearchBar()
         setupPokemonTableView()
+        setupHomeViewColorsForLightMode()
     }
     
     func setupNavigationBar() {
@@ -65,7 +66,7 @@ extension HomeView: HomeViewProtocol {
         pokemonSearchBar.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
         pokemonSearchBar.placeholder = "Search a Pokemon"
-        pokemonSearchBar.backgroundColor = .white
+        //pokemonSearchBar.backgroundColor = .white
     }
     
     func setupPokemonTableView() {
@@ -79,6 +80,25 @@ extension HomeView: HomeViewProtocol {
         
         self.pokemonTableView.rowHeight = 75
     }
+    
+    // MARK: - View light Mode
+
+        private func setupHomeViewColorsForLightMode() {
+            
+            if #available(iOS 12.0, *) {
+                let isLightMode = traitCollection.userInterfaceStyle == .light
+                
+                view.backgroundColor = isLightMode ? .white : .black
+            }
+        }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        
+        setupHomeViewColorsForLightMode()
+    }
+    
+    // MARK: - View data configuration
     
     func presenterPushDataToView(receivedData: [Pokemon]) {
         arrayViewPokemons = receivedData
@@ -139,6 +159,8 @@ extension HomeView: UISearchBarDelegate {
         self.pokemonTableView.reloadData()
     }
 }
+
+
 
 // to do
 // dark mode
