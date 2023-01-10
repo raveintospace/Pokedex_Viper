@@ -41,19 +41,9 @@ extension HomeView: HomeViewProtocol {
         pokemonTableView.delegate = self
         pokemonTableView.register(PokemonCell.self, forCellReuseIdentifier: "cellId")
         self.navigationItem.title = "Pokedex Viper"
-        setupNavigationBar()
         setupPokemonSearchBar()
         setupPokemonTableView()
         setupHomeViewColorsForLightMode()
-    }
-    
-    func setupNavigationBar() {
-        navigationBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-        navigationBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-        navigationBarAppearance.backgroundColor = .black
-        
-        navigationItem.standardAppearance = navigationBarAppearance
-        navigationItem.scrollEdgeAppearance = navigationBarAppearance
     }
     
     func setupPokemonSearchBar() {
@@ -66,7 +56,6 @@ extension HomeView: HomeViewProtocol {
         pokemonSearchBar.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
         pokemonSearchBar.placeholder = "Search a Pokemon"
-        //pokemonSearchBar.backgroundColor = .white
     }
     
     func setupPokemonTableView() {
@@ -138,6 +127,8 @@ extension HomeView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let pokemon = filteredPokemons[indexPath.row]
         presenter?.showPokemonDetailView(with: pokemon)
+        
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
@@ -163,4 +154,4 @@ extension HomeView: UISearchBarDelegate {
 
 
 // to do
-// dark mode
+// constants and classes for labels
