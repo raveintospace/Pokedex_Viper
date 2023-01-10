@@ -25,6 +25,7 @@
 		34D7DBEE2964A6D100C0533C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D7DBE72964A6D100C0533C /* HomeView.swift */; };
 		34D7DBEF2964A6D100C0533C /* HomeRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D7DBE82964A6D100C0533C /* HomeRemoteDataManager.swift */; };
 		34D7DBF02964A6D100C0533C /* HomeWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D7DBE92964A6D100C0533C /* HomeWireFrame.swift */; };
+		34F9AFDB296DD5FA00852A92 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F9AFDA296DD5FA00852A92 /* UILabelExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		34D7DBE72964A6D100C0533C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		34D7DBE82964A6D100C0533C /* HomeRemoteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRemoteDataManager.swift; sourceTree = "<group>"; };
 		34D7DBE92964A6D100C0533C /* HomeWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWireFrame.swift; sourceTree = "<group>"; };
+		34F9AFDA296DD5FA00852A92 /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				34D7DBDA2964A56D00C0533C /* LaunchScreen.storyboard */,
 				34D7DBDD2964A56D00C0533C /* Info.plist */,
 				34BEF7DB29697BB70069FDBF /* CellResources */,
+				34F9AFDC296DD60200852A92 /* UILabelExtension */,
 			);
 			path = Pokedex_Viper;
 			sourceTree = "<group>";
@@ -125,6 +128,14 @@
 				34D7DBE92964A6D100C0533C /* HomeWireFrame.swift */,
 			);
 			path = HomeView;
+			sourceTree = "<group>";
+		};
+		34F9AFDC296DD60200852A92 /* UILabelExtension */ = {
+			isa = PBXGroup;
+			children = (
+				34F9AFDA296DD5FA00852A92 /* UILabelExtension.swift */,
+			);
+			path = UILabelExtension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +210,7 @@
 			files = (
 				34D7DBD02964A56900C0533C /* AppDelegate.swift in Sources */,
 				34BEF7FE2969E3650069FDBF /* DetailWireFrame.swift in Sources */,
+				34F9AFDB296DD5FA00852A92 /* UILabelExtension.swift in Sources */,
 				34BEF7FC2969E3650069FDBF /* DetailView.swift in Sources */,
 				34D7DBD22964A56900C0533C /* SceneDelegate.swift in Sources */,
 				34D7DBEC2964A6D100C0533C /* HomeProtocols.swift in Sources */,

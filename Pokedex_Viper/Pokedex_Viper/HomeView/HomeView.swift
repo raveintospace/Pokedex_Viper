@@ -17,7 +17,6 @@ final class HomeView: UIViewController {
     var pokemonSearchBar = UISearchBar()
     var pokemonTableView = UITableView()
     var safeArea: UILayoutGuide!
-    let navigationBarAppearance = UINavigationBarAppearance()
     
     var arrayViewPokemons = [Pokemon]()
     var filteredPokemons = [Pokemon]()
