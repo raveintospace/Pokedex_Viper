@@ -24,18 +24,8 @@ protocol DetailWireFrameProtocol {
 protocol DetailPresenterProtocol: AnyObject {
     // VIEW -> PRESENTER
     var view: DetailViewProtocol? { get set }
-    var interactor: DetailInteractorInputProtocol? { get set }
     var wireFrame: DetailWireFrameProtocol? { get set }
     var dataPokemonReceived: Pokemon? { get set }
     
     func viewDidLoad()
-}
-
-protocol DetailInteractorOutputProtocol {
-    // INTERACTOR -> PRESENTER
-}
-
-protocol DetailInteractorInputProtocol: AnyObject {
-    // PRESENTER -> INTERACTOR
-    var presenter: DetailInteractorOutputProtocol? { get set }
 }

@@ -12,7 +12,6 @@ final class DetailPresenter: DetailPresenterProtocol  {
     
     // MARK: Properties
     weak var view: DetailViewProtocol?
-    var interactor: DetailInteractorInputProtocol?
     var wireFrame: DetailWireFrameProtocol?
     var dataPokemonReceived: Pokemon?
     
@@ -24,6 +23,3 @@ final class DetailPresenter: DetailPresenterProtocol  {
     }
 }
 
-extension DetailPresenter: DetailInteractorOutputProtocol {
-    // TODO: implement interactor output methods
-}
