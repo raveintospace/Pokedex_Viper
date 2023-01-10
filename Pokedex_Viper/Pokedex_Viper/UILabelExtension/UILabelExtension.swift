@@ -8,7 +8,11 @@
 import UIKit
 
 extension UILabel {
-    func applyDetailLabelFont() {
+    func applyVerdanaBoldAndSize16() {
         font = UIFont(name: "Verdana-Bold", size: 16)
+    }
+    
+    func applyVerdanaAndSize14() {
+        font = UIFont(name: "Verdana", size: 14)
     }
 }

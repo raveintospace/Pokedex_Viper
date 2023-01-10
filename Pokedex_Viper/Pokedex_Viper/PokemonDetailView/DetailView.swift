@@ -74,7 +74,7 @@ extension DetailView: DetailViewProtocol {
         detailTypeLabel.topAnchor.constraint(equalTo: detailImageIV.bottomAnchor, constant: 36).isActive = true
         detailTypeLabel.centerXAnchor.constraint(equalTo: safeArea.centerXAnchor).isActive = true
         
-        detailTypeLabel.applyDetailLabelFont()
+        detailTypeLabel.applyVerdanaBoldAndSize16()
     }
     
     func setupDetailAttackLabel() {
@@ -84,7 +84,7 @@ extension DetailView: DetailViewProtocol {
         detailAttackLabel.topAnchor.constraint(equalTo: detailTypeLabel.bottomAnchor, constant: 8).isActive = true
         detailAttackLabel.centerXAnchor.constraint(equalTo: safeArea.centerXAnchor).isActive = true
 
-        detailAttackLabel.applyDetailLabelFont()
+        detailAttackLabel.applyVerdanaBoldAndSize16()
     }
     
     func setupDetailDefenseLabel() {
@@ -94,7 +94,7 @@ extension DetailView: DetailViewProtocol {
         detailDefenseLabel.topAnchor.constraint(equalTo: detailAttackLabel.bottomAnchor, constant: 8).isActive = true
         detailDefenseLabel.centerXAnchor.constraint(equalTo: safeArea.centerXAnchor).isActive = true
         
-        detailDefenseLabel.applyDetailLabelFont()
+        detailDefenseLabel.applyVerdanaBoldAndSize16()
     }
     
     func setupDetailDescriptionTextView() {

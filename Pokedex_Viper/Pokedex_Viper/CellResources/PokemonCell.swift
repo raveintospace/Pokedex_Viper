@@ -42,7 +42,7 @@ class PokemonCell: UITableViewCell {
         idLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor).isActive = true
         idLabel.centerYAnchor.constraint(equalTo: safeArea.centerYAnchor).isActive = true
         
-        idLabel.font = UIFont(name: "Verdana-Bold", size: 16)
+        idLabel.applyVerdanaBoldAndSize16()
     }
     
     func setupImageView() {
@@ -64,7 +64,7 @@ class PokemonCell: UITableViewCell {
         nameLabel.leadingAnchor.constraint(equalTo: imageIV.trailingAnchor, constant: 15).isActive = true
         nameLabel.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -15).isActive = true
         
-        nameLabel.font = UIFont(name: "Verdana-Bold", size: 16)
+        nameLabel.applyVerdanaBoldAndSize16()
     }
     
     func setupAttackLabel() {
@@ -74,7 +74,7 @@ class PokemonCell: UITableViewCell {
         attackLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor).isActive = true
         attackLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor).isActive = true
         
-        attackLabel.font = UIFont(name: "Verdana", size: 14)
+        attackLabel.applyVerdanaAndSize14()
     }
     
     func setupDefenseLabel() {
@@ -84,6 +84,6 @@ class PokemonCell: UITableViewCell {
         defenseLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor).isActive = true
         defenseLabel.topAnchor.constraint(equalTo: attackLabel.bottomAnchor).isActive = true
         
-        defenseLabel.font = UIFont(name: "Verdana", size: 14)
+        defenseLabel.applyVerdanaAndSize14()
     }
 }
